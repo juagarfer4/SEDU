@@ -1,0 +1,94 @@
+<head>
+  <title>iotapp</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="container">
+    <h1 style="text-align: center;">SEDU 16-17 IOT Platform</h1>
+  </div>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <!--<button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+  -->
+  <div id="buttonsection" style="text-align: center;">
+    <button id="buttonfitngrow" type="button" class="btn btn-primary">Juan y Alberto</button>
+    <button id="buttonwordstojoin" type="button" class="btn btn-primary">Luis y José Miguel</button>
+  </div>
+  <div id="fitngrowsection" class="container">
+    <h1>Juan y Alberto</h1>
+    <div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Temperature</th>
+            <th>Humidity</th>
+            <th>Luminosity</th>
+            <th>Fan status</th>
+            <th>Motor status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each muestrasFitnGrow}}
+          <tr>
+            <td>{{dateformat created_at}}</td>
+            <td>{{field1}}</td>
+            <td>{{field2}}</td>
+            <td>{{field3}}</td>
+            <td>{{field4}}</td>
+            <td>{{field5}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+
+
+      </table>
+    </div>
+    <div>
+      <canvas id="tChartFitnGrow"></canvas>
+      <canvas id="hChartFitnGrow"></canvas>
+      <canvas id="lChartFitnGrow"></canvas>
+    </div>
+  </div>
+  <div id="wordstojoinsection" class="container">
+    <h1>Luis y José Miguel</h1>
+    <div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Humidity</th>
+            <th>Temperature</th>
+            <th>Resistance</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each muestrasWordstoJoin}}
+          <tr>
+            <td>{{dateformat created_at}}</td>
+            <td>{{field1}}</td>
+            <td>{{field2}}</td>
+            <td>{{field3}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+
+
+      </table>
+    </div>
+    <div>
+      <canvas id="tChartWordstoJoin"></canvas>
+      <canvas id="hChartWordstoJoin"></canvas>
+      <canvas id="lChartWordstoJoin"></canvas>
+    </div>
+  </div>
+
+</template>
